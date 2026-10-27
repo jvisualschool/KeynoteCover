@@ -1,0 +1,10 @@
+# Include inside your existing HTTPS VirtualHost after configuring TLS.
+DocumentRoot /srv/keynotecover/public
+SetEnv KC_ORIGIN https://cover.example.com
+SetEnv KC_DATA_DIR /srv/keynotecover-data
+SetEnv KC_PHP_BIN /usr/bin/php
+<Directory /srv/keynotecover/public>
+    Options -Indexes
+    AllowOverride All
+    Require all granted
+</Directory>

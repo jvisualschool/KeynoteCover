@@ -1,0 +1,36 @@
+/* Page appearance is independent of generated artwork and its color palette. */
+:root{color-scheme:light}
+.header-actions{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.header-actions #logout-button{margin-left:0}
+.appearance-toggle{width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;padding:8px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:10px;flex-shrink:0}
+.appearance-toggle:hover{background:var(--violet-soft)}
+.appearance-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.appearance-sun{display:none}
+:root[data-appearance=dark]{color-scheme:dark;--bg:#14151c;--paper:#20222d;--ink:#f0eff8;--muted:#b9b5c6;--line:#393a49;--violet:#b6a2ff;--violet-soft:#34304c}
+[data-appearance=dark] .appearance-sun{display:block}
+[data-appearance=dark] .appearance-moon{display:none}
+[data-appearance=dark] .site-header{border-color:var(--line)}
+[data-appearance=dark] :is(.preview-panel,.theme-card,.secondary,.variants button){background:var(--paper);color:var(--ink);border-color:var(--line)}
+[data-appearance=dark] :is(textarea,.login-form input,.gallery-search input,.recent-panel select,#detail-prompt){background:#191b25;color:var(--ink);border-color:var(--line)}
+[data-appearance=dark] :is(textarea,input)::placeholder{color:#a29caf}
+[data-appearance=dark] :is(.upload-box,.file-info,.direction,.preview-badge,.keywords span,.close-button){background:#2a2b3a;color:var(--muted);border-color:#49455f}
+[data-appearance=dark] :is(.upload-box:hover,.upload-box.dragover,.page-nav a:hover){background:var(--violet-soft)}
+[data-appearance=dark] :is(.space-options,.share-options,.source-options,.mood-options) label>span{color:var(--muted);border-color:var(--line)}
+[data-appearance=dark] :is(.space-options,.share-options,.source-options,.mood-options,.theme-options) input:checked+span{background:var(--violet-soft);color:#d8ccff;border-color:#a28ae9}
+[data-appearance=dark] .theme-options input:checked+.theme-card{box-shadow:inset 0 0 0 1px #a28ae9}
+[data-appearance=dark] :is(.step,.tiny-label,.field-label span,.fine-print,.upload-box span,.upload-box small,.preview-bottom p,.recent-panel,.recent-panel>span,footer,.gallery-heading h1 span,.detail-section p,#summary,.direction p,summary,summary span,#page-summaries li,#page-summaries li>b,#page-summaries li strong){color:var(--muted)}
+[data-appearance=dark] .direction>span{color:var(--violet)}
+[data-appearance=dark] #page-summaries li{border-color:var(--line)}
+[data-appearance=dark] .primary{background:#745cda;color:#fff}
+[data-appearance=dark] .primary:not(:disabled):hover{background:#8067e5}
+[data-appearance=dark] .download-button{background:#d9cff8;color:#211c31}
+[data-appearance=dark] .download-button:hover{background:#ece4ff}
+[data-appearance=dark] .detail-heading{background:#20222df5}
+[data-appearance=dark] :is(.cover-dialog,.admin-dialog)::backdrop{background:#05060bc9}
+[data-appearance=dark] .progress-overlay{background:#20222df5}
+[data-appearance=dark] :is(.progress-overlay p,.progress-overlay>span,.progress-overlay small){color:var(--muted)}
+[data-appearance=dark] :is(.notice,.delete-button){background:#382527;border-color:#845354;color:#ffb9ae}
+[data-appearance=dark] .delete-button:hover:not(:disabled){background:#4b3034}
+[data-appearance=dark] :is(.detail-error,.login-form #login-error){color:#ffb9ae}
+/* Image pixels, preview backgrounds, swatches and layout diagrams retain their actual colors. */
+@media(max-width:720px){.header-actions{gap:10px}.appearance-toggle{width:36px;height:36px}.site-header{column-gap:10px}}
